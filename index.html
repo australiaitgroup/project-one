@@ -1,0 +1,220 @@
+<!-- .form__submit--disabled -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project One</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    * {
+      font-family: 'Roboto', sans-serif;
+    }
+    
+    body {
+      margin: 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .main {
+      height: 100vh;
+      background-color: #f5f5f5;
+      background-image: url(https://hades217.github.io/images/main_bg.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    
+    .nav {
+      padding: 30px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav__left {
+      flex: 1;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+    }
+
+    .logo__highlight {
+      color: #2eca2e;
+    }
+
+    .navbar {
+      display: flex;
+    }
+
+    .navbar__item {
+      padding: 16px;
+      text-decoration: none;
+      color: #49515d;
+      font-size: 15px;
+      opacity: 0.6;
+      display: block;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .navbar__item::after {
+      content: "";  
+      width: 0;
+      border-bottom: 3px solid #2eca7f;
+      margin: auto;
+      margin-top: 4px;
+      display: block;
+      transition: width 0.3s ease-in-out;
+    }
+
+    .navbar__item--active,
+    .navbar__item:hover {
+      opacity: 1;
+    }
+
+    .navbar__item--active::after,
+    .navbar__item:hover::after {
+      width: 24px;
+    }
+
+    .navbar__item:last-of-type {
+      padding-right: 0;
+    }
+
+    .pages {
+      position: relative;
+    }
+
+    .page {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      border-radius: 16px;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .page--active {
+      position: relative;
+      opacity: 1;
+    }
+
+    .page__header {
+      padding: 32px 0;
+      background-color: #2eca7f;
+      background-image: url(https://hades217.github.io/images/main_bg.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+    }
+
+    .page__title {
+      margin: 0;
+      text-align: center;
+      color: white;
+      font-size: 44px;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="container">
+      <header class="nav">
+        <div class="nav__left">
+          <div class="logo">
+            Long 
+            <span class="logo__highlight">Zhao</span>
+          </div>
+        </div>
+        <div class="nav__right">
+          <div class="navbar">
+            <a class="navbar__item navbar__item--active" href="HOME">Home</a>
+            <a class="navbar__item" href="RESUME">Resume</a>
+            <a class="navbar__item" href="SERVICES">Services</a>
+            <a class="navbar__item" href="BLOG">Blog</a>
+            <a class="navbar__item" href="CONTACT">Contact</a>
+          </div>
+        </div>
+      </header>
+      <div class="pages">
+        <div id="HOME" class="page page--active">
+          <div class="page__header">
+            <h2 class="page__title">HOME</h2>
+          </div>
+        </div>
+        <div id="RESUME" class="page">
+          <div class="page__header">
+            <h2 class="page__title">RESUME</h2>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        footer
+      </div>
+    </div>
+  </div>
+  <script>
+    function Nav() {
+      this.previous = '';
+      this.current = 'HOME';
+
+      this.push = function(event) {
+        event.preventDefault();
+
+        this.previous = this.current;
+        
+        var href = event.target.getAttribute('href');
+
+        this.current = href;
+
+        this.changePage();
+        this.changeNavItem();
+      }
+
+      this.changePage = function() {
+        var previousPage = document.getElementById(this.previous);
+        var page = document.getElementById(this.current);
+
+        var className = 'page--active';
+
+        previousPage.classList.remove(className);
+        page.classList.add(className);  
+      }
+
+      this.changeNavItem = function() {
+        var previousNavItem = document.querySelector('[href="'+ this.previous +'"]');
+        var navItem = document.querySelector('[href="'+ this.current +'"]');
+
+        var className = 'navbar__item--active';
+
+        previousNavItem.classList.remove(className);
+        navItem.classList.add(className); 
+      }
+    }
+    
+    function main() {
+      const nav = new Nav();
+
+      function onClick(event) {
+        nav.push(event);
+      }
+
+      function onEach(element) {
+        element.onclick = onClick;
+      }
+
+      document
+        .querySelectorAll('.navbar__item')
+        .forEach(onEach);
+    }
+
+    main();
+  </script>
+</body>
+</html>
