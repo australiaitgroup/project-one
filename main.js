@@ -1,6 +1,9 @@
 function createNav() {
   var previous = '';
-  var current = 'HOME';
+  var current = 'RESUME';
+
+  changePage();
+  changeNavItem();
 
   document
     .querySelectorAll('.navbar__item')
@@ -22,22 +25,26 @@ function createNav() {
   }
 
   function changePage() {
-    var previousPage = document.querySelector('#' + previous);
-    var page = document.querySelector('#' + current);
-
     var className = 'page--active';
 
-    previousPage.classList.remove(className);
+    if (previous) {
+      var previousPage = document.querySelector('#' + previous);
+      previousPage.classList.remove(className);
+    }
+
+    var page = document.querySelector('#' + current);
     page.classList.add(className);  
   }
 
   function changeNavItem() {
-    var previousNavItem = document.querySelector('[href="'+ previous +'"]');
-    var navItem = document.querySelector('[href="'+ current +'"]');
-
     var className = 'navbar__item--active';
 
-    previousNavItem.classList.remove(className);
+    if (previous) {
+      var previousNavItem = document.querySelector('[href="'+ previous +'"]');
+      previousNavItem.classList.remove(className);
+    }
+
+    var navItem = document.querySelector('[href="'+ current +'"]');
     navItem.classList.add(className); 
   }
 }
