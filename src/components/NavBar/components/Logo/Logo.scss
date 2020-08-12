@@ -1,0 +1,10 @@
+@import '../../../../style/variables.scss';
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  &__highlight {
+    color: $primary-color;
+  }
+}

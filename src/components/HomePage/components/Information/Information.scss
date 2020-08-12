@@ -1,0 +1,30 @@
+.page__content {
+  padding: 32px 64px;
+  background-color: white;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.homepage__content {
+  padding-top: 56px;
+  display: flex;
+  justify-content: space-between;
+
+  & > div {
+    flex-basis: calc(50% - 32px);
+  }
+}
+
+.homepage__aboutMeHeader {
+  margin-top: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  &Highlight {
+    color: #377e9a;
+  }
+}
+
+.homepage__aboutMeContent {
+  line-height: 1.75;
+}

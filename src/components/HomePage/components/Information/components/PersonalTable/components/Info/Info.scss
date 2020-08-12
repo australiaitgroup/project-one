@@ -1,0 +1,11 @@
+td {
+  padding: 4px 0;
+
+  &:first-of-type {
+    padding-right: 42px;
+  }
+
+  &:last-of-type {
+    color: #9e9e9e;
+  }
+}

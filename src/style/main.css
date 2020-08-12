@@ -1,0 +1,20 @@
+* {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #377e9a;
+}
+
+.main {
+  background-color: #f5f5f5;
+  background-image: url(./assets/main_bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
