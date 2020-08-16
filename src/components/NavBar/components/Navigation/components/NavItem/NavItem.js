@@ -2,21 +2,48 @@ import React from 'react';
 
 import './NavItem.scss';
 
-const NavItem = (props) => {
-  let className = 'navbar__item';
+class NavItem extends React.Component {
+  constructor(props) {
+    super(props);
 
-  if (props.active) {
-    className += ' navbar__item--active';
+    this.state = {
+      active: false,
+      foo: 'bar',
+    };
+
+    this.handleItemClick = this.handleItemClick.bind(this);
   }
 
-  return (
-    <a 
-      className={className} 
-      href={props.href}
-    >
-      {props.children}
-    </a>
-  );
+  handleItemClick(event) {
+    event.preventDefault();
+
+    this.setState({
+      active: true,
+    });
+  }
+
+  render() {
+    const { href, children } = this.props;
+    const { active } = this.state;
+
+    let className = 'navbar__item';
+
+    if (active) {
+      className += ' navbar__item--active';
+    }
+
+    return (
+      <a 
+        className={className} 
+        href={href}
+        onClick={this.handleItemClick}
+      >
+        {children}
+        &nbsp;
+        active: {active.toString()}
+      </a>
+    );
+  }
 }
 
 export default NavItem;
