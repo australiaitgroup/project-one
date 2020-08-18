@@ -1,6 +1,10 @@
 @import '../../../../../../style/variables.scss';
 
 .navbar__item {
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  cursor: pointer;
   padding: 16px;
   text-decoration: none;
   color: #49515d;
