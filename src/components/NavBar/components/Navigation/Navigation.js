@@ -3,14 +3,37 @@ import NavItem from './components/NavItem';
 
 import './Navigation.scss';
 
-const Navigation =  () => (
-  <nav className="navbar">
-    <NavItem active href="HOME">Home</NavItem>
-    <NavItem href="RESUME">Resume</NavItem>
-    <NavItem href="SERVICE">Service</NavItem>
-    <NavItem href="BLOG">Blog</NavItem>
-    <NavItem href="CONTACT">Contact</NavItem>
-  </nav>
-);
+const NAV_ITEMS = [{
+  pageName: 'HOME',
+  children: 'Home',
+}, {
+  pageName: 'RESUME',
+  children: 'Resume',
+}, {
+  pageName: 'SERVICE',
+  children: 'Service',
+}, {
+  pageName: 'BLOG',
+  children: 'Blog',
+}, {
+  pageName: 'CONTACT',
+  children: 'Contact',
+}];
 
+const Navigation = ({
+  activePage, 
+  onNavItemClick,
+}) => (
+  <nav className="navbar">
+    {NAV_ITEMS.map(({ pageName, children }) => (
+      <NavItem
+        key={pageName}
+        active={activePage === pageName}
+        onClick={onNavItemClick(pageName)}
+      >
+        {children}
+      </NavItem>
+    ))}
+  </nav>
+)
 export default Navigation;
