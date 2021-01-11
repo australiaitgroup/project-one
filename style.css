@@ -20,7 +20,7 @@ a {
   flex-direction: column;
 }
 
-.main {
+.app {
   background-color: #f5f5f5;
   background-image: url(./assets/main_bg.png);
   background-size: cover;
