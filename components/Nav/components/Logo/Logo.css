@@ -1,0 +1,8 @@
+.logo {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.logo__highlight {
+  color: #377e9a;
+}

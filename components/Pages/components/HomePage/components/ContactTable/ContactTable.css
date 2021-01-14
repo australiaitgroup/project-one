@@ -1,0 +1,15 @@
+.homepage__contact {
+  border: 0;
+}
+
+.homepage__contact td {
+  padding: 4px 0;
+}
+
+.homepage__contact td:first-of-type {
+  padding-right: 42px;
+}
+
+.homepage__contact td:last-of-type {
+  color: #9e9e9e;
+}

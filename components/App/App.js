@@ -99,12 +99,25 @@
 // 7. 为什么有 jsx 的地方，就一定需要有 React?
 // 8. 为什么会出现 jsx
 
+// eslint + jest (react testing lib | enzyme)
+// 写小功能，多写多测试
+// 1. CSS -> Nav...
+// 正常工作
+// 2. CSS -> App
+// !debug
+// 3. install dev server
+// debug
+// 4. bug
+
 import Nav from  '../Nav/Nav';
+import Pages from '../Pages/Pages';
+import './App.css';
 
 const App = () => (
   <div className="app">
     <div className="container">
       <Nav />
+      <Pages />
     </div>
   </div>
 );

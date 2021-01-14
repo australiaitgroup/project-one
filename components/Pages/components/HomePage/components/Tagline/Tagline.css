@@ -1,0 +1,23 @@
+.homepage__title {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homepage__name {
+  margin: 0;  
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.homepage__position {
+  font-size: 1.25rem;
+  margin-top: 8px;
+}
+
+.homepage__socialMedias {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}

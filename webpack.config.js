@@ -14,6 +14,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 // 怎么解决呢？
 // 工具 -> 动态插入到 html
 
+// Webpack Babel
+// 配置型编程
+// 如何正确的 Google [关键词] -> 熟练
+// 通读并背诵文档 -> 精通
+// https://webpack.docschina.org/concepts/why-webpack/
+// 面向求职学习
+// webpack + npm + nodejs 模块原理 + 高级 JS
 module.exports = {
   entry: './main.js',
   output: {

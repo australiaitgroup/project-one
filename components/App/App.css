@@ -1,0 +1,14 @@
+.container {
+  max-width: 1000px;
+  margin: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app {
+  background-color: #f5f5f5;
+  background-image: url(./assets/main_bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,13 @@
+.homepage__aboutMeHeader {
+  margin-top: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.homepage__aboutMeHeaderHighlight {
+  color: #377e9a;
+}
+
+.homepage__aboutMeContent {
+  line-height: 1.75;
+}

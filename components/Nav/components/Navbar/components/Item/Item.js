@@ -24,6 +24,7 @@
 // Facebook，React 只是扩展了这个 compiler，使 Babel 能够编译 JSX
 
 // presets
+import './Item.css';
 
 const Item = ({
   active,

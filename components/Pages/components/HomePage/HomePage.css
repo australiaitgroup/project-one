@@ -1,0 +1,8 @@
+.homepage__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.homepage__content > div {
+  flex-basis: calc(50% - 32px);
+}
