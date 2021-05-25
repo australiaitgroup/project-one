@@ -1,0 +1,33 @@
+.navbarItem {
+  padding: 16px;
+  text-decoration: none;
+  color: #49515d;
+  font-size: 15px;
+  opacity: 0.6;
+  display: block;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.navbarItem::after {
+  content: "";  
+  width: 0;
+  border-bottom: 3px solid #377e9a;
+  margin: auto;
+  margin-top: 4px;
+  display: block;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbarItem:hover,
+.navbarItem--active {
+  opacity: 1;
+}
+
+.navbarItem:hover::after,
+.navbarItem--active::after {
+  width: 24px;
+}
+
+.navbarItem:last-of-type {
+  padding-right: 0;
+}
